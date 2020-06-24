@@ -1,0 +1,30 @@
+{
+  "name": "apparelforfunSite",
+  "version": "1.0.0",
+  "description": "This is the code for the site of my Apparelforfun niche",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "nodemon --inspect ./server.js",
+    "watch": "nodemon ./server.js",
+    "start": "node ./server.js"
+  },
+  "engines": {
+    "node": ">=8.11.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sipmarch7/apparelforfunSite.git"
+  },
+  "keywords": [],
+  "author": "Spyridon Peppas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sipmarch7/apparelforfunSite/issues"
+  },
+  "homepage": "https://github.com/sipmarch7/apparelforfunSite#readme",
+  "dependencies": {
+    "nodemon": "^2.0.4",
+    "express": "^4.17.1"
+  }
+}
