@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Sipmarch7">
+    <meta name="description" content="Apparelforfun merchendise store">
+    <meta name="keywords" content="HMTL, CSS, JS, Project, ApparelForFun, Upatras, node.js, e-shop, merchendise">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - ApparelForFun</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/header.css" rel="stylesheet" type="text/css">
+    <link href="css/index.css" rel="stylesheet" type="text/css">
+    <link href="css/footer.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<!--     header -->
+    {{> header }} 
+
+    <main>
+
+<!--   SLIDESHOW PART MMM-->
+        <div id="slideshow">
+            <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:690px;overflow:hidden;visibility:hidden;">
+
+                <!-- Loading Screen -->
+                <div data-u="slides" style="padding:cursor:default;position:relative;top:0px;left:0px;width:980px;height:690px;overflow:hidden;">
+
+                    <!-- TO be replaced with table content from sql slideshow -->
+                    <div class="imgdiv" data-p="735" >
+                        <img data-u="image" src="../img/product/alex.jpeg" />
+                    </div>
+
+                    <div class="imgdiv" data-p="735" class="img">
+                        <img data-u="image" src="../img/product/kelly.jpeg" />
+                    </div>
+
+                    <div class="imgdiv" class="img">
+                        <img data-u="image" src="../img/product/spiros.jpeg" />
+                    </div>
+
+                    <div class="imgdiv" data-p="735" class="img">
+                        <img data-u="image" src="../img/product/lympe.jpeg" />
+                    </div> 
+
+
+                </div>
+                <!-- Bullet Navigator -->
+                <div data-u="navigator" class="jssorb071" style="position:absolute;bottom:20px;right:20px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+                    <div data-u="prototype" class="i" style="width:24px;height:24px;font-size:12px;line-height:24px;">
+                        <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:-1;">
+                            <circle class="b" cx="8000" cy="8000" r="6666.7"></circle>
+                        </svg>
+                        <div data-u="numbertemplate" class="n"></div>
+                    </div>
+                </div>
+                <!-- Arrow Navigator -->
+                <div data-u="arrowleft" class="jssora051" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+                    <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                        <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
+                    </svg>
+                </div>
+                <div data-u="arrowright" class="jssora051" style="width:55px;height:55px;top:0px;right:25px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+                    <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                        <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
+                    </svg>
+                </div>
+            </div>
+        </div>
+<!-- BELOW SLIDESHOW -->
+    <div id="botLine"></div>
+
+    <div id="whiteLine"></div>
+
+    </main>
+<!-- footer -->
+    {{> footer }}
+
+    <script src="../js/index.js"></script>
+    <script src="../js/slideshow.js"></script>
+    <script src="../js/header.js"></script>
+    <script type="text/javascript">jssor_1_slider_init();</script>
+</body>
+
+</html>

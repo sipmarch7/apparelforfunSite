@@ -1,0 +1,51 @@
+
+/* home */
+main{
+    max-width: 1400px;
+    margin: auto;
+    text-align: center;
+    padding: 0px;
+}
+
+/*jssor slider bullet skin 071 css*/
+.jssorb071 .i {position:absolute;color:black; opacity:0.5; font-family:"Helvetica neue",Helvetica,Arial,sans-serif;text-align:center;cursor:pointer;z-index:0;}
+.jssorb071 .i .b {fill:black;opacity:.5;}
+.jssorb071 .i:hover {opacity:.7;}
+.jssorb071 .iav {color:orange;}
+.jssorb071 .iav .b {fill:orange;opacity:1;}
+.jssorb071 .i.idn {opacity:.3;}
+
+/*jssor slider arrow skin 051 css*/
+.jssora051 {display:block;position:absolute;cursor:pointer;}
+.jssora051 .a {fill:none;stroke:orange;stroke-width:660;stroke-miterlimit:10;}
+.jssora051:hover {opacity:.8;}
+.jssora051.jssora051dn {opacity:.5;}
+.jssora051.jssora051ds {opacity:.3;pointer-events:none;}
+
+/* my additions */
+#slideshow{
+    background-color: white;
+    max-width: 1400px;
+}
+.imgdiv img{
+    width: unset        !important;
+    overflow: unset     !important;
+    max-height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    position: unset     !important;
+    left: unset         !important;
+    margin-top: 20px;
+}
+#botLine{
+    background-color: black;
+    max-width: 1400px;
+    height: 30px;
+    margin-bottom: 20px;
+}
+#whiteLine{
+    background-color: white;
+    max-width: 1400px;
+    height: 100px;
+    margin-bottom: 20px;
+}

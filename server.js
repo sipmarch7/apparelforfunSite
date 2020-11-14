@@ -7,13 +7,21 @@ const path = require('path');
 
 //use HBS view engine
 const hbs = require('hbs');
+
+// .env dile 
 const dotenv = require("dotenv");
 dotenv.config();
-    //set views file
-app.set('views',path.join(__dirname,'views'));
-hbs.registerPartials(__dirname + '/views/partials');
-    //set view engine
+
+//set view engine
 app.set('view engine', 'hbs');
+
+//set views file
+app.set('views', __dirname + '/views');
+hbs.registerPartials(__dirname + '/views/partials');
+
+//set public folder as static folder for static file
+app.use(express.static(__dirname + '/public'));
+
 
 //use mySQL MODULE for db
 const mysql = require('mysql');
@@ -24,7 +32,7 @@ const conn = mysql.createConnection({
     password: process.env.DB_PASS,
     database: process.env.DB_DB
 });
-    //connect to DB
+//connect to DB
 conn.connect((err) =>{
     if(err) throw err;
     console.log('Mysql Connected...');
@@ -85,14 +93,18 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// Listen to port 
-app.listen(8080, ()=>{
-    console.log("Shop is Up!");
-})
 
 //  ALL ROUTES /////////////////////////////////////////////////////
 
 // route Home Page -> apparelforfun.store
-app.get('/', (req,res) => {
-    res.send('<h1>My future shop</h1>');
-})
+const indexRouter = require('./routes/index');
+app.use('/', indexRouter);
+const galleryRouter = require('./routes/gellery');
+app.use('/gallery', galleryRouter);
+
+//port number
+var portNumber = process.env.port || process.env.PORT || 3030;
+//server listening
+app.listen(portNumber, () => {
+  console.log('Server is running at port '+portNumber);
+});
