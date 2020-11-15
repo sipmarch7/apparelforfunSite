@@ -1,7 +1,5 @@
 /* header */
-header{
-   
-}
+
 #topLinkLine{
     background-color: orange;
     height: 24px;
@@ -68,9 +66,7 @@ header{
     text-align: center;
     width: 50%;
 }
-#navbarDropdown{
-    
-}
+
 #drpdown-login{  
     position: absolute          !important; 
     will-change: unset          !important;

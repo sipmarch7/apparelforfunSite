@@ -33,22 +33,11 @@
                 <div data-u="slides" style="padding:cursor:default;position:relative;top:0px;left:0px;width:980px;height:690px;overflow:hidden;">
 
                     <!-- TO be replaced with table content from sql slideshow -->
+                    {{#each res_product_img}}
                     <div class="imgdiv" data-p="735" >
-                        <img data-u="image" src="../img/product/alex.jpeg" />
+                        <img data-u="image" src="{{img_loc}}" />
                     </div>
-
-                    <div class="imgdiv" data-p="735" class="img">
-                        <img data-u="image" src="../img/product/kelly.jpeg" />
-                    </div>
-
-                    <div class="imgdiv" class="img">
-                        <img data-u="image" src="../img/product/spiros.jpeg" />
-                    </div>
-
-                    <div class="imgdiv" data-p="735" class="img">
-                        <img data-u="image" src="../img/product/lympe.jpeg" />
-                    </div> 
-
+                    {{/each}}
 
                 </div>
                 <!-- Bullet Navigator -->
@@ -75,8 +64,10 @@
         </div>
 <!-- BELOW SLIDESHOW -->
     <div id="botLine"></div>
-
-    <div id="whiteLine"></div>
+    
+    <div id="whiteLine">
+        <b> {{res_product.2.product_name}}</b><br>
+    </div>
 
     </main>
 <!-- footer -->
@@ -84,7 +75,7 @@
 
     <script src="../js/index.js"></script>
     <script src="../js/slideshow.js"></script>
-    <script src="../js/header.js"></script>
+    
     <script type="text/javascript">jssor_1_slider_init();</script>
 </body>
 

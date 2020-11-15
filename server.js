@@ -37,6 +37,7 @@ conn.connect((err) =>{
     if(err) throw err;
     console.log('Mysql Connected...');
 });
+module.exports = conn;
 
 
 // use PASSPORT MODULE for user log in and session + bcrypt for password protection
