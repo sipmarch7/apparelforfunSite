@@ -35,7 +35,7 @@
                     <!-- TO be replaced with table content from sql slideshow -->
                     {{#each res_product_img}}
                     <div class="imgdiv" data-p="735" >
-                        <img data-u="image" src="{{img_loc}}" />
+                        <img data-u="image" src="{{img_loc}}" alt="{{product_name}}_{{product_color}}"/>
                     </div>
                     {{/each}}
 
@@ -66,7 +66,7 @@
     <div id="botLine"></div>
     
     <div id="whiteLine">
-        <b> {{res_product.2.product_name}}</b><br>
+        <b> {{res_product_img.2.product_name}}</b><br>
     </div>
 
     </main>
@@ -75,7 +75,6 @@
 
     <script src="../js/index.js"></script>
     <script src="../js/slideshow.js"></script>
-    
     <script type="text/javascript">jssor_1_slider_init();</script>
 </body>
 
