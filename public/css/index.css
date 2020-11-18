@@ -1,12 +1,4 @@
 
-/* home */
-main{
-    max-width: 1400px;
-    margin: auto;
-    text-align: center;
-    padding: 0px;
-}
-
 /*jssor slider bullet skin 071 css*/
 .jssorb071 .i {position:absolute;color:black; opacity:0.5; font-family:"Helvetica neue",Helvetica,Arial,sans-serif;text-align:center;cursor:pointer;z-index:0;}
 .jssorb071 .i .b {fill:black;opacity:.5;}

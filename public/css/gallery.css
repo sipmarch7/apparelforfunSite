@@ -1,3 +1,33 @@
-main{
-    height: 500px;
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: auto 0;
 }
+.row{
+    max-width: auto;
+    justify-content: space-evenly;
+    
+}
+
+div.polaroid {
+    overflow: hidden;
+    max-width: 350px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 25px;
+    margin-top: 25px;    
+}
+.polaroid:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.polaroid img{
+    height: 350px;
+    margin: 0 -100%;
+}  
+div.polaroidContainer {
+    text-align: center;
+    padding: 10px 20px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 18px;
+  }

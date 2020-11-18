@@ -25,11 +25,16 @@
 
     <main class="main-gallery">
         <div class="container">
-            <div class="row">
+            <div class="row px-1">
 
-                <div class="col-md-4 col-sm-6">
-                    <img src="" alt="y">
+                {{#each product}}
+                <div class="polaroid col-md-4 col-sm-6 mx-2 p-0">
+                    <img class="img" src="{{img_loc}}" alt="{{product_name}}_{{product_color}}">
+                    <div class="polaroidContainer">
+                        <p>{{product_color}} {{product_name}}</p>
+                    </div>
                 </div>
+                {{/each}}
 
             </div>
         </div>
@@ -38,7 +43,7 @@
 
     {{> footer }}
 
-    
+    <script src="../js/gallery.js"></script>
 </body>
 
 </html>

@@ -3,7 +3,7 @@ const router = express.Router();
 const conn = require('../server');
 
 router.get('/', (req,res) => {
-var sql = "SELECT  * FROM tbl_slideshow_home INNER JOIN tbl_product_img ON tbl_slideshow_home.img_id=tbl_product_img.img_id INNER JOIN tbl_product ON tbl_slideshow_home.product_id=tbl_product.product_id;"
+  var sql = "SELECT * FROM tbl_product_img INNER JOIN tbl_product ON tbl_product.product_id=tbl_product_img.product_id WHERE slideshow=1;"
   let query = conn.query(sql, (err, results)=>{
     if(err) throw err;
     res.render('index',{ res_product_img: results });
