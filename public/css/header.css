@@ -6,6 +6,7 @@
 }
 #header{
     margin: 10px 0px;
+    
 }
 .header-container{
     max-width: 1400px;
@@ -13,7 +14,9 @@
     margin: 0 auto;
 }
 
-
+#navbarNav{
+    z-index: 1000;
+}
 .header-menu{
     padding: 0;
 }
@@ -45,7 +48,6 @@
 }
 
 
-
 .header-logo{
     padding: 0;
     text-align: center; 
@@ -68,6 +70,7 @@
 }
 
 #drpdown-login{  
+    z-index: 1200;
     position: absolute          !important; 
     will-change: unset          !important;
     transform: unset            !important;

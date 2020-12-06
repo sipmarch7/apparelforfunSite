@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Sipmarch7">
+    <meta name="description" content="Apparelforfun merchendise store">
+    <meta name="keywords" content="HMTL, CSS, JS, Project, ApparelForFun, Upatras, node.js, e-shop, merchendise">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin:Photos - ApparelForFun</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
+    <link href="../css/header.css" rel="stylesheet" type="text/css">
+    <link href="../css/footer.css" rel="stylesheet" type="text/css">
+    <link href="../css/productPhotos.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<!--                    header                    -->
+    {{> header }} 
+<!--                    main                    -->
+    <main>
+        <div class="container">
+            <div class="row container-row">
+                <!--                    Modal Open Image                    -->     
+                <div class="newPic polaroid col-md-4 col-sm-6 mx-2 p-0"><a href="#" role="button" data-toggle="modal" data-target="#exampleModalCenter"></a></div>
+                <!--                    each image                    -->
+                {{#each image}}
+                <div class="polaroid col-md-4 col-sm-6 mx-2 p-0">
+                    <img class="img" src="{{img_loc}}" alt="{{product_name}}_{{product_color}}">
+                    <div class="polaroidContainer">
+                        <form action="productPhotos/updateProductPhoto" method="POST">
+                            <div class="line ">
+                                <div>{{product_color}} {{product_name}}</div></div>
+                            <div class="line">
+                                <div class="question">Product Images?</div>
+                                <div class="answer"> <span class="yesSpan">YES</span> <span class="noSpan">NO</span> </div>
+                                <input type="hidden" name="productImage" value="{{productImage}}" class="productImage yesOrNo"></div>
+                            <div class="line">
+                                <div class="question">Slideshow?</div>
+                                <div class="answer"> <span class="yesSpan">YES</span> <span class="noSpan">NO</span> </div>
+                                <input type="hidden" name="productSlideshow" value="{{slideshow}}" class="productSlideshow yesOrNo"></div>
+                            <div class="line">
+                                <div class="question">Gallery?</div>
+                                <div class="answer"> <span class="yesSpan">YES</span> <span class="noSpan">NO</span> </div>
+                                <input type="hidden" name="productGallery" value="{{gallery}}" class="productGallery yesOrNo"></div>
+                            <div class="line row">
+                                <button type="submit" class="col-6 btn btn-primary">UPDATE</button>
+                                <input type="hidden" name="updateImage" value="{{img_id}}">
+                        </form>
+                                <form action="productPhotos/deleteProductPhoto" method="POST" class="col-6 p-0 deleteForm">
+                                    <button type="button" class="w-100 btn btn-outline-danger deleteBtn"><b>DELETE</b></button>
+                                    <input type="hidden" name="deleteImage" value="{{img_id}}">
+                                </form>    
+                            </div>                        
+                    </div>
+                </div>
+                {{/each}}
+
+            </div>
+        </div>
+    </main>
+<!--                    Add Modal                    -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Add New Photo</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="productPhotos/addProductPhoto" method="POST" enctype="multipart/form-data" >
+              <div class="row addNewPhoto">
+                <div class="col-md-6">
+                    <label class="w-100" for="products">Product:</label>
+                    <select id="products" class="w-100" name="products">
+                        {{#each product}}
+                        <option value="{{product_name}}">{{product_name}}</option>
+                        {{/each}}
+                    </select>
+                    <label class="w-100" for="colors">Product:</label>
+                    <select id="colors" class="w-100" name="colors">
+                        {{#each color}}
+                        <option value="{{product_color}}">{{product_color}}</option>
+                        {{/each}}
+                    </select>
+
+                </div>
+                <div class="col-md-6">
+                    <label class="w-100" for="photo">Image</label>
+                    <input type="file" class="w-100" id="photo" name="photo" accept="image/png, image/jpeg, image/jpg">
+                </div>
+              </div>
+              
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Upload</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!--                    footer                    -->
+    {{> footer }}
+<!--                    scripts                    -->
+    <script src="../js/productPhoto.js"></script>
+</body>
+
+</html>

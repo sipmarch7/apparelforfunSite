@@ -20,11 +20,10 @@
 </head>
 
 <body>
-<!--     header -->
+<!--                    header                    -->
     {{> header }} 
-
+<!--                    main                    -->
     <main>
-
 <!--   SLIDESHOW PART MMM-->
         <div id="slideshow">
             <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:690px;overflow:hidden;visibility:hidden;">
@@ -62,20 +61,21 @@
                 </div>
             </div>
         </div>
-<!-- BELOW SLIDESHOW -->
-    <div id="botLine"></div>
+    <!-- BELOW SLIDESHOW -->
+        <div id="botLine"></div>
     
-    <div id="whiteLine">
-        <b> {{res_product_img.2.product_name}}</b><br>
-    </div>
+        <div id="whiteLine">
+            <b> {{res_product_img.2.product_name}}</b><br>
+        </div>
 
     </main>
-<!-- footer -->
+<!--                    footer                    -->
     {{> footer }}
-
+<!--                    scripts                    -->
     <script src="../js/index.js"></script>
     <script src="../js/slideshow.js"></script>
     <script type="text/javascript">jssor_1_slider_init();</script>
+    
 </body>
 
 </html>

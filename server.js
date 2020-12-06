@@ -100,8 +100,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // route Home Page -> apparelforfun.store
 const indexRouter = require('./routes/index');
 app.use('/', indexRouter);
-const galleryRouter = require('./routes/gellery');
+const galleryRouter = require('./routes/gallery');
 app.use('/gallery', galleryRouter);
+const adminRouter = require('./routes/admin');
+app.use('/admin', adminRouter);
 
 //port number
 var portNumber = process.env.port || process.env.PORT || 3030;

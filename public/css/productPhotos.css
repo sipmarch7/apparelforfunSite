@@ -1,0 +1,100 @@
+main{
+    z-index: 500;
+    max-width: 1400px;
+    margin: 10px auto 20px;
+}
+main .container{
+    max-width: 1200px;
+    min-height: 500px;
+    margin: 0 auto;
+    padding: auto 0;
+    background-color:rgb(210, 210, 210);
+    display: flex;
+    justify-content: center;
+}
+.container-row{   
+    justify-content: flex-start;
+    width: fit-content;
+    max-width: 1120px;
+}
+.newPic a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.newPic{
+    background-image: url("../img/addNewFirst.jpeg");
+}
+.newPic:hover{
+    background-image: url("../img/addNewSecond.jpeg");
+}
+
+div.polaroid {
+    z-index: 501;
+    overflow: hidden;
+    max-width: 170px;
+    max-height: 280px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 15px;
+    margin-top: 15px;    
+}
+.polaroid:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.polaroid img{
+    height: 170px;
+    margin: 0 -100%;
+}  
+div.polaroidContainer {
+    background-color: rgb(240, 240, 240);
+    text-align: center;
+    padding: 0;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 10px;
+  }
+.line{
+    margin-bottom: 3px;
+}
+.line:last-of-type{
+    margin: 0px;
+}
+.line .question{
+    display: inline-block;
+    width: 58%;
+}
+.line .answer{
+    display: inline-block;
+    width: 38%;
+    cursor: pointer;
+}
+.answer .yesSpan{
+    background-color: green;
+    color: white;
+    width: 49%;
+    display: inline-block;
+    border-radius: 5px;
+}
+.answer .noSpan{
+    background-color: red;
+    color: white;
+    width: 44%;
+    display: inline-block;
+    border-radius: 5px;
+}
+.line button, .deleteForm button{
+    height: 20px;
+    
+    font-size: 10px;
+    padding:0px;
+    border-radius: 0px;
+    align-self: end;
+}
+.deleteForm{
+    display: inline-block;
+    width: 100%;
+}
+.addNewPhoto label {
+
+}
