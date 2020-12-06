@@ -88,13 +88,9 @@ router.post('/productPhotos/addProductPhoto', upload.single('photo'), (req,res)=
                 let sql2 = "INSERT INTO tbl_product_img (product_id, img_loc) VALUES ('"+product_id+"','"+img_loc+"')";
                 let query2 = conn.query(sql2, (err, results)=>{
                     if(err) throw err;
-                    console.log(req.file);
                     var oldFile = req.file.path;
                     var newFile = req.file.destination+"/"+req.body.products+"_"+req.body.colors+"_"+img_count+"."+imgType;
                     var rawData = fs.readFileSync(oldFile);
-                    console.log(oldFile);
-                    console.log(newFile);
-                    console.log(rawData);
                     fs.writeFile(newFile, rawData, function(err){ 
                         if(err) console.log(err);
                     });
